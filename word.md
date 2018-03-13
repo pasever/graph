@@ -9,3 +9,13 @@ Referring to a some set of conventions used in web development for manipulating 
 /<name>/:id URL /posts/11 ;   method GET ;    fetch post 11
 /<name>/:id URL /posts/23 ;   method PUT ;    update post 23
 /<name>/:id URL /posts/44 ;   method DELETE;  delete post 44
+
+
+Possible schemas structure:
+
+User:                               Company:                           Position: 
+id: id                              id: id                             id: id
+name: string                        name: string                       name: string
+image: string                       description: string                description: string 
+company_id: id
+position_id: id 
