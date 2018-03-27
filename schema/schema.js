@@ -82,16 +82,17 @@ const mutation = new GraphQLObjectType({
                 companyId: { type: GraphQLString }
             },
             resolve(parentValue, {firstName, age}) {
-                return axios.post(`http://localhost:3000/users`, { firstName, age})
+                return axios.post(`http://localhost:3000/users`, { firstName, age } )
                             .then(res => res.data);
             }
-        },
-        deleteUser: {
-            type: UserType,
-            args: {
-                
-            }
         }
+        //,
+        // deleteUser: {
+        //     type: UserType,
+        //     args: {
+                
+        //     }
+        // }
     }      
 });
 

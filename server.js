@@ -11,3 +11,8 @@ app.use('/graphql', expressGraphQL({
 app.listen(9999, () => { 
     console.log('( ^__^ ) Live on PORT ');
 });
+
+
+
+
+// starting a json.db server = npm run json:server
