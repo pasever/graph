@@ -86,13 +86,24 @@ const mutation = new GraphQLObjectType({
                             .then(res => res.data);
             }
         },
+        addCompany: {
+            type: UserType,
+            args: {
+                name: { type: new GraphQLNonNull(GraphQLString) },
+                description: { type: new GraphQLNonNull(GraphQLInt) }
+            },
+            resolve(parentValue, { name, description }) {
+                return axios.post(`http://localhost:3000/companies`, { name, description } )
+                            .then(res => res.data);
+            }
+        },
         deleteUser: {
             type: UserType,
             args: {
-                id: {type: new GraphQLNonNull(GraphQLInt) }
+              id: { type: new GraphQLNonNull(GraphQLString) }
             },
-            resolve(parentValue, { firstName, age }) {
-                return axios.delete(`http//localhost:3000/users/${ args.id }`)
+            resolve(parentValue, { id }) {
+                return axios.delete(`http//localhost:3000/users/${ id }`)
                             .then(res => res.data);
             }
         }
